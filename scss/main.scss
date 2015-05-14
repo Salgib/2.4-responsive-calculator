@@ -1,0 +1,76 @@
+$visual-grid: true;
+
+
+@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../bower_components/neat/app/assets/stylesheets/neat';
+
+
+
+body {
+  background-color: green;
+}
+
+.container {
+  @include outer-container(518px);
+  background-color: aqua;
+}
+
+.chrome {
+  width: 100%;
+  height: 30px;
+  background-color: gray;
+}
+
+.display {
+  width: 100%;
+  height: 100px;
+  background-color: RGBA(224, 224, 224, 1);
+}
+
+button {
+  width: 50px;
+  height: 50px;
+}
+
+
+li {
+  list-style: none;
+  display: block;
+}
+.keypad {
+  @include outer-container;
+  @include shift(2);
+  height: 300px;
+}
+
+.buttons-row-1,
+.buttons-row-2,
+.buttons-row-3,
+.buttons-row-4,
+.bottom-row {
+  @include span-columns(9);
+  @include row(1);
+  @include omega(auto);
+  display: inline-block;
+}
+
+ /* .bottom-row {
+
+   @include span-columns(9);
+   @include omega(auto);
+   @include row(1);
+   display: inline-block;
+ } */
+
+.zero {
+  @include span-columns(5 of 9);
+  display:inline-block;
+}
+
+.decimal {
+  @include span-columns(2 of 9);
+}
+
+.equals {
+  @include span-columns(2 of 9);
+}
