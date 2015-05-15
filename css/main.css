@@ -6,37 +6,17 @@ html {
 *::before {
   box-sizing: inherit; }
 
-body:before {
-  background-image: -webkit-linear-gradient(left, transparent 0, #eee 0, #eee 25%, transparent 25%, transparent 25%, #eee 25%, #eee 50%, transparent 50%, transparent 50%, #eee 50%, #eee 75%, transparent 75%, transparent 75%, #eee 75%, #eee 100%, transparent 100%);
-  background-image: -moz-linear-gradient(left, transparent 0, #eee 0, #eee 25%, transparent 25%, transparent 25%, #eee 25%, #eee 50%, transparent 50%, transparent 50%, #eee 50%, #eee 75%, transparent 75%, transparent 75%, #eee 75%, #eee 100%, transparent 100%);
-  background-image: -ms-linear-gradient(left, transparent 0, #eee 0, #eee 25%, transparent 25%, transparent 25%, #eee 25%, #eee 50%, transparent 50%, transparent 50%, #eee 50%, #eee 75%, transparent 75%, transparent 75%, #eee 75%, #eee 100%, transparent 100%);
-  background-image: -o-linear-gradient(left, transparent 0, #eee 0, #eee 25%, transparent 25%, transparent 25%, #eee 25%, #eee 50%, transparent 50%, transparent 50%, #eee 50%, #eee 75%, transparent 75%, transparent 75%, #eee 75%, #eee 100%, transparent 100%);
-  background-image: linear-gradient(to left, transparent 0, #eee 0, #eee 25%, transparent 25%, transparent 25%, #eee 25%, #eee 50%, transparent 50%, transparent 50%, #eee 50%, #eee 75%, transparent 75%, transparent 75%, #eee 75%, #eee 100%, transparent 100%);
-  content: "";
-  display: inline-block;
-  height: 100%;
-  left: 0;
-  margin: 0 auto;
-  max-width: 68em;
-  opacity: 0.4;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  z-index: -1; }
-
 * {
   box-sizing: border-box; }
 
 body {
-  background-color: green; }
+  background-color: black; }
 
 .container {
-  max-width: 240px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
-  background-color: aqua; }
+  margin-top: 75px; }
   .container::after {
     clear: both;
     content: "";
@@ -45,16 +25,16 @@ body {
 .chrome {
   width: 100%;
   height: 30px;
-  background-color: gray; }
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: gray;
+  border-bottom: 2px black solid; }
 
 .display {
   width: 100%;
   height: 100px;
-  background-color: RGBA(224, 224, 224, 1); }
-
-button {
-  width: 60px;
-  height: 60px; }
+  background-color: RGBA(224, 224, 224, 1);
+  border-bottom: 2px black solid; }
 
 .keypad {
   max-width: 68em;
@@ -64,9 +44,13 @@ button {
   display: block;
   margin-right: 0%;
   width: 100%;
+  font-size: 2em;
   width: 100%;
   padding: 0px;
-  height: 300px; }
+  height: 410px;
+  background-color: RGBA(224, 224, 224, 1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
   .keypad::after {
     clear: both;
     content: "";
@@ -74,14 +58,33 @@ button {
   .keypad:last-child {
     margin-right: 0; }
 
-.clrpercent,
+button {
+  width: 80px;
+  height: 80px; }
+
+/* column layout for keypad area */
+.clrpercent {
+  background-color: #072364; }
+
+.operator {
+  background-color: #13395d;
+  color: white; }
+
 .number {
   float: left;
   display: block;
   margin-right: 0%;
   width: 25%; }
-  .clrpercent:last-child,
   .number:last-child {
+    margin-right: 0; }
+
+.clrpercent {
+  float: left;
+  display: block;
+  margin-right: 0%;
+  width: 25%;
+  color: white; }
+  .clrpercent:last-child {
     margin-right: 0; }
 
 .zero {
@@ -91,36 +94,3 @@ button {
   width: 50%; }
   .zero:last-child {
     margin-right: 0; }
-
-/* .buttons-row-1,
-.buttons-row-2,
-.buttons-row-3,
-.buttons-row-4,
-.bottom-row {
-  @include span-columns(4);
-  @include row(1);
-  @include omega();
-  display: inline-block;
-}
-
- .bottom-row {
-
-   @include span-columns(9);
-   @include omega(auto);
-   @include row(1);
-   display: inline-block;
- }
-
-.zero {
-  @include span-columns(3 of 7);
-  display:inline-block;
-}
-
-.decimal {
-  @include span-columns(2 of 7);
-}
-
-.equals {
-  @include span-columns(2 of 7);
-}
- */
