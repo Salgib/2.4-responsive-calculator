@@ -1,17 +1,23 @@
 $visual-grid: true;
+$gutter: 0em;
+$grid-columns: 4;
 
 
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 
-
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: green;
 }
 
+
 .container {
-  @include outer-container(518px);
+  @include outer-container(240px);
+  margin-top: 200px;
   background-color: aqua;
 }
 
@@ -28,49 +34,60 @@ body {
 }
 
 button {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 
-li {
-  list-style: none;
-  display: block;
-}
+
+
 .keypad {
   @include outer-container;
-  @include shift(2);
+  @include span-columns(4);
+  width: 100%;
+  padding: 0px;
   height: 300px;
 }
 
-.buttons-row-1,
+.clrpercent,
+.number, {
+  @include span-columns(1);
+}
+
+.zero {
+  @include span-columns(2);
+}
+
+
+/* .buttons-row-1,
 .buttons-row-2,
 .buttons-row-3,
 .buttons-row-4,
 .bottom-row {
-  @include span-columns(9);
+  @include span-columns(4);
   @include row(1);
-  @include omega(auto);
+  @include omega();
   display: inline-block;
 }
 
- /* .bottom-row {
+ .bottom-row {
 
    @include span-columns(9);
    @include omega(auto);
    @include row(1);
    display: inline-block;
- } */
+ }
 
 .zero {
-  @include span-columns(5 of 9);
+  @include span-columns(3 of 7);
   display:inline-block;
 }
 
 .decimal {
-  @include span-columns(2 of 9);
+  @include span-columns(2 of 7);
 }
 
 .equals {
-  @include span-columns(2 of 9);
+  @include span-columns(2 of 7);
 }
+ */
